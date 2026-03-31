@@ -61,7 +61,7 @@ export default function BookingWidget({ serviceType = 'doctor', serviceId = 1 })
             {loading && <p style={{ textAlign: 'center', color: '#0066cc' }}>جاري البحث عن الأوقات المتاحة...</p>}
 
             {/* 3. رسائل الخطأ أو الإجازات */}
-            {message && <p style={{ textAlign: 'center', color: '#cc0000', backgroundColor: '#ffe6e6', padding: '10px', borderRadius: '5px' }}>{message}</p>}
+            {message && <p className='bg-primary' style={{ textAlign: 'center', color: '#cc0000', backgroundColor: '#ffe6e6', padding: '10px', borderRadius: '5px' }}>{message}</p>}
 
             {/* 4. عرض الأزرار (الأوقات المتاحة) */}
             {slots.length > 0 && (
@@ -72,6 +72,7 @@ export default function BookingWidget({ serviceType = 'doctor', serviceId = 1 })
                             <button
                                 key={index}
                                 onClick={() => setSelectedTime(slot.start)}
+                                
                                 style={{
                                     padding: '10px 15px',
                                     border: 'none',
