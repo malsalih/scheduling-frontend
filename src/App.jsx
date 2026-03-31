@@ -2,11 +2,12 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-import './App.css'
 import BookingWidget from './components/BookingWidget'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Navbar from './components/Navbar'
+import HeroSection from './components/HeroSection'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,8 +16,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={
-          <div dir="rtl" style={{ backgroundColor: '#f4f7f6', minHeight: '100vh', padding: '20px' }}>
-            <BookingWidget serviceType="doctor" serviceId={1} />
+          <div dir="rtl" className='bg-background flex flex-col'>
+            <Navbar className=""/>
+            <HeroSection className=""/>
+            {/* <BookingWidget serviceType="doctor" serviceId={1} /> */}
           </div>
         }/>
 
