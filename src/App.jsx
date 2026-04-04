@@ -8,6 +8,9 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
+import Categories from './components/Categories'
+import FeaturedProviders from './components/FeaturedProviders'
+import DoctorProfile from './components/DoctorProfile'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +22,8 @@ function App() {
           <div dir="rtl" className='bg-background flex flex-col'>
             <Navbar className=""/>
             <HeroSection className=""/>
+            <Categories/>
+            <FeaturedProviders/>
             {/* <BookingWidget serviceType="doctor" serviceId={1} /> */}
           </div>
         }/>
@@ -29,6 +34,13 @@ function App() {
 
         <Route path='/register' element={
           <Register/>
+        }/>
+
+        <Route path='/doctor' element={
+          <div dir="rtl" className='bg-background flex flex-col'>
+            <Navbar className=""/>
+            <DoctorProfile/>
+          </div>
         }/>
 
         <Route path="/provider-dashboard" element={
